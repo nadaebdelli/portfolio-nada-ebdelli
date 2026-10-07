@@ -1,11 +1,9 @@
-import { useState } from 'react'
-
 import './App.css'
 
 function App() {
   return (
     <main>
-      <section id="hero">Hero</section>
+      <Hero />
       <section id="about">About me</section>
       <section id="skills">Skills</section>
       <section id="experience">Experience</section>

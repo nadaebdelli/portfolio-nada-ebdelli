@@ -1,0 +1,101 @@
+.hero {
+  position: relative;
+  isolation: isolate;
+  min-height: 100svh;
+  padding: 9rem 8vw 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 75% 45%, rgba(255, 60, 172, 0.14), transparent 25rem),
+    linear-gradient(135deg, var(--color-bg), #16091f);
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.2;
+  background-image:
+    linear-gradient(rgba(255, 139, 216, 0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 139, 216, 0.15) 1px, transparent 1px);
+  background-size: 4rem 4rem;
+  mask-image: linear-gradient(to bottom, black, transparent 85%);
+}
+
+.hero__eyebrow {
+  margin: 0 0 1.5rem;
+  color: var(--color-primary-light);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.hero__title {
+  max-width: 800px;
+  margin: 0;
+  color: var(--color-text);
+  font-size: clamp(3.5rem, 10vw, 8rem);
+  line-height: 0.95;
+  letter-spacing: -0.07em;
+}
+
+.hero__description {
+  max-width: 30rem;
+  margin: 2rem 0;
+  color: var(--color-muted);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  line-height: 1.7;
+}
+
+.hero__button {
+  width: fit-content;
+  padding: 0.9rem 1.4rem;
+  border: 1px solid var(--color-primary);
+  border-radius: 999px;
+  background: var(--color-primary);
+  color: #190817;
+  font-weight: 700;
+  box-shadow: var(--shadow-pink);
+  transition:
+    transform 200ms ease,
+    background 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.hero__button:hover {
+  transform: translateY(-3px);
+  background: var(--color-primary-light);
+  box-shadow: 0 0 55px rgba(255, 60, 172, 0.45);
+}
+
+.hero__orb {
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  right: 8vw;
+  width: clamp(12rem, 30vw, 28rem);
+  aspect-ratio: 1;
+  border: 1px solid rgba(255, 139, 216, 0.5);
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #ff8bd8, #ff3cac 35%, #4e1c73 70%);
+  box-shadow:
+    0 0 4rem rgba(255, 60, 172, 0.35),
+    inset -2rem -2rem 4rem rgba(13, 6, 18, 0.5);
+  transform: translateY(-50%);
+}
+
+@media (max-width: 700px) {
+  .hero {
+    padding: 7rem 1.5rem 4rem;
+  }
+
+  .hero__orb {
+    top: 68%;
+    right: -4rem;
+    opacity: 0.55;
+  }
+}
